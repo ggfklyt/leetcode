@@ -1,4 +1,4 @@
-package com.nonsuch1.easy;
+package com.nonsuch1.easy.arrays;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,25 +24,26 @@ public class SummaryRanges {
         List<String> ranges = solution.summaryRanges(new int[]{0, 1, 2, 3, 7, 8, 9, 15, 20, 21, 25, 26});
         System.out.println(ranges);
     }
-}
 
-class Solution {
-    public List<String> summaryRanges(int[] nums) {
-        List<String> ranges = new ArrayList<>();
-        int i = 0;
-        while (i < nums.length) {
-            int start = nums[i];
-            while (i < nums.length - 1 && nums[i] == nums[i + 1] - 1) {
+    static class Solution {
+        public List<String> summaryRanges(int[] nums) {
+            List<String> ranges = new ArrayList<>();
+            int i = 0;
+            while (i < nums.length) {
+                int start = nums[i];
+                while (i < nums.length - 1 && nums[i] == nums[i + 1] - 1) {
+                    i++;
+                }
+                int end = nums[i];
+                if (start == end) {
+                    ranges.add(start + "");
+                } else {
+                    ranges.add(start + "->" + end);
+                }
                 i++;
             }
-            int end = nums[i];
-            if (start == end) {
-                ranges.add(start + "");
-            } else {
-                ranges.add(start + "->" + end);
-            }
-            i++;
+            return ranges;
         }
-        return ranges;
     }
 }
+
