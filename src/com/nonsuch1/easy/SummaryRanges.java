@@ -1,8 +1,7 @@
-package com.nonsuch1;
+package com.nonsuch1.easy;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * You are given a sorted unique integer array nums.
