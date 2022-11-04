@@ -33,8 +33,6 @@ public class TwoSum {
                     return new int[]{first, second};
                 }
             }
-            Set<Integer> set = new HashSet<>();
-            set.ad
             return null;
         }
     }
