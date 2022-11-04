@@ -1,5 +1,8 @@
 package com.nonsuch1.easy.arrays;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Given an array of integers nums and an integer target,
  * return indices of the two numbers such that they add up to target.
@@ -27,10 +30,12 @@ public class TwoSum {
                 }
                 if (nums[first] + nums[j] == target) {
                     second = j;
-                    break;
+                    return new int[]{first, second};
                 }
             }
-            return new int[]{first, second};
+            Set<Integer> set = new HashSet<>();
+            set.ad
+            return null;
         }
     }
 }
