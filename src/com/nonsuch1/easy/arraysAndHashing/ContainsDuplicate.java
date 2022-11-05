@@ -1,4 +1,4 @@
-package com.nonsuch1.easy;
+package com.nonsuch1.easy.arraysAndHashing;
 
 import java.util.HashSet;
 import java.util.Set;

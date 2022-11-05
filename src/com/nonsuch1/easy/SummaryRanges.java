@@ -1,4 +1,4 @@
-package com.nonsuch1.easy.arrays;
+package com.nonsuch1.easy;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,4 @@
-package com.nonsuch1.easy.arrays;
-
-import java.util.HashSet;
-import java.util.Set;
+package com.nonsuch1.easy.arraysAndHashing;
 
 /**
  * Given an array of integers nums and an integer target,
