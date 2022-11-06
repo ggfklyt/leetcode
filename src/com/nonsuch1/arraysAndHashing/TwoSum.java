@@ -1,4 +1,4 @@
-package com.nonsuch1.easy.arraysAndHashing;
+package com.nonsuch1.arraysAndHashing;
 
 /**
  * Given an array of integers nums and an integer target,
