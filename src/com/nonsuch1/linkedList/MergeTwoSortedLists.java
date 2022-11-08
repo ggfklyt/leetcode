@@ -33,49 +33,40 @@ public class MergeTwoSortedLists {
                 return list2;
             if (list2 == null)
                 return list1;
-            if (list1 == null && list2 == null)
-                return null;
-            ListNode current1 = list1;
-            ListNode current2 = list2;
-            ListNode result = null;
+            ListNode tail = null;
             ListNode head = null;
 
-            while (current1 != null && current2 != null) {
-                if (current1.val < current2.val) {
-                    if (result != null) {
-                        result.next = current1;
-                        result = result.next;
-                        current1 = current1.next;
+            while (list1 != null && list2 != null) {
+                if (list1.val < list2.val) {
+                    if (head != null) {
+                        tail.next = list1;
+                        tail = tail.next;
                     } else {
-                        head = current1;
-                        result = head;
-                        current1 = current1.next;
+                        head = list1;
+                        tail = head;
                     }
+                    list1 = list1.next;
                 } else {
-                    if (result != null) {
-                        result.next = current2;
-                        result = result.next;
-                        current2 = current2.next;
+                    if (head != null) {
+                        tail.next = list2;
+                        tail = tail.next;
                     } else {
-                        head = current2;
-                        result = head;
-                        current2 = current2.next;
+                        head = list2;
+                        tail = head;
                     }
+                    list2 = list2.next;
                 }
             }
-            if (result != null) {
-                while (current1 != null) {
-                    result.next = current1;
-                    result = result.next;
-                    current1 = current1.next;
-                }
-                while (current2 != null) {
-                    result.next = current2;
-                    result = result.next;
-                    current2 = current2.next;
-                }
+            while (list1 != null) {
+                tail.next = list1;
+                tail = tail.next;
+                list1 = list1.next;
             }
-
+            while (list2 != null) {
+                tail.next = list2;
+                tail = tail.next;
+                list2 = list2.next;
+            }
             return head;
         }
     }
