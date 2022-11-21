@@ -1,4 +1,4 @@
-package com.nonsuch1.leetcode.test.bitManupilation;
+package com.nonsuch1.leetcode.bitManupilation;
 
 
 import com.nonsuch1.leetcode.bitManupilation.NumberOfOneBits;
