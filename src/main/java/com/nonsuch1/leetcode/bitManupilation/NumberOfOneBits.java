@@ -38,15 +38,16 @@ package com.nonsuch1.leetcode.bitManupilation;
  *
  */
 public class NumberOfOneBits {
+
     // you need to treat n as an unsigned value
     public int hammingWeight(int n) {
         int count = 0;
-        String binaryNum = Integer.toBinaryString(n);
-        char[] chars = binaryNum.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == '1') {
+        int oneMask = 1;
+        for (int i = 0; i < 32; i++) {
+            if ((n & oneMask) != 0) {
                 count++;
             }
+            oneMask <<= 1;
         }
         return count;
     }
