@@ -42,17 +42,19 @@ package com.nonsuch1.leetcode.bitManupilation;
 public class CountingBits {
     public int[] countBits(int n) {
         int[] ans = new int[n + 1];
-        for (int i = 0; i <= n; i++) {
-            int count = 0;
-            int oneMask = 1;
-            for (int j = 0; j < 32; j++) {
-                if ((i & oneMask) != 0) {
-                    count++;
-                }
-                oneMask <<= 1;
-            }
-            ans[i] = count;
+        for (int i = ans.length - 1; i >= 0; i--) {
+            ans[i] = countBitsInNumber(n--);
         }
         return ans;
+    }
+
+    public int countBitsInNumber(int n) {
+        if (n == 0)
+            return 0;
+        if (n == 1)
+            return 1;
+        if (n % 2 == 0)
+            return countBitsInNumber(n / 2);
+        return countBitsInNumber(n / 2) + 1;
     }
 }
