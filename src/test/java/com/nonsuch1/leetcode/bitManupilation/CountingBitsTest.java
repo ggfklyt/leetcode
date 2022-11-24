@@ -11,7 +11,7 @@ class CountingBitsTest {
     void countBits() {
         int[] expected = new int[]{0, 1, 1, 2, 1, 2};
 
-        int[] actual = countingBits.countBits(5);
+        int[] actual = countingBits.countBits(15);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 }
