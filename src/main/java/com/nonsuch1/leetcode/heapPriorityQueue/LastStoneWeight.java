@@ -46,7 +46,7 @@ public class LastStoneWeight {
             while (queue.size() != 1) {
                 queue.offer(queue.poll() - queue.poll());
             }
-            return (queue.size() == 0 ? 0 : queue.poll());
+            return queue.poll();
         }
     }
 }
