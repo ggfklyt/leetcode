@@ -24,12 +24,23 @@ package com.nonsuch1.leetcode.trees;
  * -100 <= Node.val <= 100
  */
 public class DiameterOfBinaryTree {
+    class Diameter {
+        private int value;
+        public Diameter(int value) {
+            this.value = value;
+        }
+    }
     public int diameterOfBinaryTree(TreeNode root) {
-        return maximumHeight(root.left) + maximumHeight(root.right);
+        Diameter diameter = new Diameter(0);
+        maximumHeight(root, diameter);
+        return diameter.value;
     }
 
-    private int maximumHeight(TreeNode root) {
+    private int maximumHeight(TreeNode root, Diameter diameter) {
         if (root == null) return 0;
-        return Integer.max(maximumHeight(root.left), maximumHeight(root.right)) + 1;
+        int left = maximumHeight(root.left, diameter);
+        int right = maximumHeight(root.right, diameter);
+        diameter.value = Integer.max(left + right, diameter.value);
+        return 1 + Integer.max(left, right);
     }
 }
